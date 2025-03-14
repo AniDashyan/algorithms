@@ -54,4 +54,31 @@ namespace ani {
         }
         return {last, false};
     }
+
+    template< class ForwardIt1, class ForwardIt2 >
+    ForwardIt1 search( ForwardIt1 first, ForwardIt1 last, ForwardIt2 s_first, ForwardIt2 s_last ) {
+        if (s_first == s_last)
+            return (first);
+
+        ForwardIt1 it = first;
+        while (it != last) {
+            while (s_first != s_last) {
+                if (*it != *s_first) {
+                    s_first++;
+                    break;
+                }
+                s_first++;
+                it++;
+            }
+            if (it == last)
+                return (it);
+            it++;
+        }
+        return (last);
+    }
+
+    // template< class ForwardIt1, class ForwardIt2 >
+    // constexpr ForwardIt1 find_end( ForwardIt1 first, ForwardIt1 last, ForwardIt2 s_first, ForwardIt2 s_last ) {
+        
+    // }
 }

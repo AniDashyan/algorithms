@@ -132,5 +132,7 @@ int main() {
 
     std::cout << std::setfill(' ') << std::setw(30) << "" << std::setfill(' ') << "\n";
     std::cout << std::setfill('-') << std::setw(30) << "" << std::setfill(' ') << "\n";
+
+    std::cout << "Testing search\n";
     return (0);
 }
